@@ -1,2 +1,5 @@
 <h1>Eat at DCU!</h1>
-<a href="{% url 'eatatdcu:restaurants' %}">Restaurants</a>
+<form action="{% url 'eatatdcu:restaurants' %}" method="get">
+Campus: <input type="text" name="campus"><br>
+<input type="submit" value="Go">
+</form>
