@@ -1,1 +1,21 @@
-No restaurants found
+{% if campus %}
+    {% if restaurant %}
+        <h1>There are some restaurants</h1>
+	<ul>
+	{% for rest in restaurant %}
+	    <li>{{ rest.name }}</li>
+	    <ul>
+	        <li>Location: {{ rest.location }}</li>
+	        <li>Campus ID: {{ rest.campus_id }}</li>
+	        <li>Opening hours: {{ rest.opening_hours }}</li>
+	        <li>Cloding hours: {{ rest.closing_hours }}</li>
+	        <li>Capacity: {{ rest.capacity }}</li>
+	    </ul>
+        {% endfor %}
+	</ul>
+    {% else %}
+	<h1>No restaurants found</h1>
+    {% endif %}
+{% else %}
+    <h1>No such campus</h1>	
+{% endif %}
