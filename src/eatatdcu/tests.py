@@ -75,3 +75,28 @@ class A1Tests(TestCase):
         self.assertEqual(response.status_code,200)
         self.assertContains(response,'No such campus')
 
+class A2Tests(TestCase):
+
+    def test_webservice(self):
+        """Test calling of webservice for each restaurant 
+        """
+        for restaurant in ['main restaurant','1838','nubar restaurant','canteen']:
+           self.webservice(restaurant)
+
+    def test_invalid_name(self):
+        """ Test calling webservice for invalid restaurant 
+        """
+        response = self.client.get(reverse('eatatdcu:specials',kwargs={'restaurant':'1839'}))
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response,'Restaurant name')
+        self.assertContains(response,'is unknown')
+
+    def webservice(self, rest):
+        """ Test calling webservice for individual restaurant
+        """
+        response = self.client.get(reverse('eatatdcu:specials',kwargs={'restaurant':rest}))
+        self.assertEqual(response.status_code,200)
+        self.assertContains(response, rest)
+        self.assertNotContains(response,'An error has occurred')
+
+
