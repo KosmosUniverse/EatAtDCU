@@ -2,6 +2,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Restaurant,Campus
+import requests
+import json
 
 def index(request):
    context = {}
@@ -37,8 +39,19 @@ def restaurants(request):
    return render(request,'eatatdcu/restaurants.html',context)
 
 def specials(request,restaurant):
-    webservice_url = 'http://jfoster.pythonanywhere.com/specials/'+restaurant
+   context = {}
+   webservice_url = 'http://jfoster.pythonanywhere.com/specials/'+restaurant
 
-    # call the web service to get the daily special for "restaurant"
+   # call the web service to get the daily special for "restaurant"
 
-    # pass the information returned by the web service into the "specials.html" template using render function
+   # pass the information returned by the web service into the "specials.html" template using render function
+   webServ = requests.get(webservice_url)
+
+   load = json.loads(webServ.content)
+
+   if ('error_num' in load.keys()):
+      context = {'error':load['error_msg']}
+   else:
+      context = {'daily':load['daily_special'], 'name':load['restaurant_name'], 'date':load['date']}
+   
+   return render(request, 'eatatdcu/specials.html', context)
