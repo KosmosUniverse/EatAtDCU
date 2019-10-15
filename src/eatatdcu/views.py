@@ -47,7 +47,7 @@ def specials(request,restaurant):
    # pass the information returned by the web service into the "specials.html" template using render function
    webServ = requests.get(webservice_url)
 
-   load = json.loads(webServ.content)
+   load = json.loads(webServ.text)
 
    if ('error_num' in load.keys()):
       context = {'error':load['error_msg']}
