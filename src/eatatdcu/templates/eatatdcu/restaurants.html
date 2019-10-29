@@ -4,7 +4,7 @@
    <h3>Restaurants</h3>
    {% if restaurants %}
       {% for r in restaurants %}
-         <li>{{ r.name }}{% if r.staff_only %} (staff only !){% endif %}, {{ r.location }}, {{ r.opening_hours }} - {{ r.closing_hours }}
+         <li>{{ r.name }}{% if r.staff_only %} (staff only!){% endif %}, {{ r.location }}, {{ r.opening_hours }} - {{ r.closing_hours }}, {% if r.is_open_we %} (weekends: {{ r.we_opening_hours }} - {{ r.we_closing_hours }}) {% else %}(closed weekends) {% endif %}
 	 <a href="{% url 'eatatdcu:specials' restaurant=r.name %}">Specials</a>
 	 </li>
       {% endfor %}
