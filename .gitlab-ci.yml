@@ -3,7 +3,7 @@ image: "smblott/dcu-docker-gitlab-ci"
 testA1:
   script:
     - "django-admin --version"
-    - "echo ok checking submission for A1"
+    - "echo ok checking submission for A3"
     - "echo checking for restaurant.csv and campus.csv"
     - "ls data/restaurant.csv"
     - "ls data/campus.csv"
@@ -13,4 +13,4 @@ testA1:
     - "echo found load_db_data.py"
     - "cd src; python3 manage.py test eatatdcu"
     - "echo running python django test"
-    - "echo finished A1 submission checks"
+    - "echo finished A3 submission checks"
