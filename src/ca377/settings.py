@@ -24,7 +24,9 @@ SECRET_KEY = '(4@wgv)mrp3^63sm_gjmi86mv4g_85%&4r9m6=om#9p6lm#-ze'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ducrett2.pythonanywhere.com',
+]
 
 # Application definition
 
