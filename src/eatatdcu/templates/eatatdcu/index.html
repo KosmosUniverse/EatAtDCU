@@ -1,5 +1,13 @@
-<h1>Eat at DCU!</h1>
-<form action="{% url 'eatatdcu:restaurants' %}" method="get">
-Campus: <input type="text" name="campus"><br>
-<input type="submit" value="Go">
-</form>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'eatatdcu/style.css' %}" type="text/css"/>
+</head>
+<body>
+  <h1>Eat at DCU!</h1>
+  <form action="{% url 'eatatdcu:restaurants' %}" method="get">
+    Campus: <input type="text" name="campus"><br>
+    <input type="submit" value="Go">
+  </form>
+</body>
+</html>
