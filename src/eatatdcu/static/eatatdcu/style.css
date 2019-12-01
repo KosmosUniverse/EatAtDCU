@@ -188,8 +188,7 @@ a, a:hover {
 
 .footer {
   background-color: #024669;
-  height: 90px;
-  line-height: 90px;
+  height: 50%;
   margin-top: 5%;
 }
 
@@ -205,6 +204,52 @@ a, a:hover {
   font-weight: bold;
   text-align: center;
   line-height: inherit;
+}
+
+.cfoot2 {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form {
+  margin-top: 15px;
+}
+
+.contact-form .textarea {
+  min-height: 220px;
+  resize: none;
+}
+
+.form-control {
+  box-shadow: none;
+  border-color: #EEEEEE;
+  height: 49px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #00B09C;
+}
+
+.form-control-feedback {
+  line-height: 50px;
+}
+
+.main-btn {
+  background: #00B09C;
+  border-color: #00B09C;
+  color: #FFFFFF;
+}
+
+.main-btn:hover {
+  background: #00A491;
+  color: #FFFFFF;
+}
+
+.form-control-feedback {
+  line-height: 50px;
+  top: 0px;
 }
 
 /* Restaurants */
