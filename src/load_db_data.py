@@ -5,7 +5,7 @@ from eatatdcu.models import Campus, Restaurant
 with open('../data/campus.csv') as ca:
    reader = csv.reader(ca)
    for row in reader:
-      campus = Campus(int(row[0]),row[1])
+      campus = Campus(int(row[0]),row[1],row[2])
       campus.save()
 
 with open('../data/restaurant.csv') as re:

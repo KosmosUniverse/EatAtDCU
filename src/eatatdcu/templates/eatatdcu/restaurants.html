@@ -1,27 +1,66 @@
 <html>
 <head>
+  <meta charset="utf-8">
+  <title>Eat@DCU</title>
+
+  <!-- CSS ans static files load -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'eatatdcu/style.css' %}" type="text/css"/>
+  <link rel="stylesheet" href="{% static 'eatatdcu/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'eatatdcu/style.css' %}"/>
+  <link rel="icon" href="{% static 'eatatdcu/imgs/titlelogo.ico' %}"/>
 </head>
 <body>
-  <div id="header">
-    
-  </div>
-  <div id="container">
+  <!-- Header -->
+  <header class="container-fluid header">
+    <div class="container chead">
+      <a href="{% url 'eatatdcu:index' %}"><h1 class="titleLogo">Eat@DCU</h1></a>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- Restaurants -->
+  <div class="container-fluid superRestau">
     {% if error %}
-       {{ error }}
+      <div class="container restau">
+       <h2>{{ error }}</h2>
+      </div>
     {% else %}
-       <h3>Restaurants</h3>
-       {% if restaurants %}
-          {% for r in restaurants %}
-             <li>{{ r.name }}{% if r.staff_only %} (staff only!){% endif %}, {{ r.location }}, {{ r.opening_hours }} - {{ r.closing_hours }}, {% if r.is_open_we %} (weekends: {{ r.we_opening_hours }} - {{ r.we_closing_hours }}) {% else %}(closed weekends) {% endif %}
-    	          <a href="{% url 'eatatdcu:specials' restaurant=r.name %}">Specials</a>
-    	      </li>
-          {% endfor %}
-       {% else %}
-          No restaurants found
-       {% endif %}
+      <div class="container restau">
+        <h2>Restaurants</h2>
+        <hr class="separator">
+        {% if restaurants %}
+          <div class="row art">
+            {% for r in restaurants %}
+              <article class="col-md-4 col-lg-4 col-sm-12 col-xs-12 rest">
+                <h3>{{ r.name }}</h3>
+                {% if r.staff_only %}
+                  <p>Reserved: Staff Only!<span id="tests">(staff only!)</span></p>
+                {% endif %}
+                <p>Location: {{ r.location }}</p>
+                <p>Hours: {{ r.opening_hours }} - {{ r.closing_hours }}</p>
+                {% if r.is_open_we %}
+                  <p>Weekend hours: {{ r.we_opening_hours }} - {{ r.we_closing_hours }}</p>
+                {% else %}
+                  <p>Closed on Weekends<span id="tests">closed weekends</span></p>
+                {% endif %}
+                {% if r.error_num %}
+                  <p>No Specials for this restaurants</p>
+                {% elif r.specials %}
+                  <h4>Specials</h4>
+                  <p>Daily: {{ r.daily }}</p>
+                  <p>Date: {{ r.date }}</p>
+                {% else %}
+                  <a href="{% url 'eatatdcu:specials' restaurant=r.name %}">Specials</a>
+                {% endif %}
+              </article>
+            {% endfor %}
+          </div>
+        {% else %}
+          <h3>No restaurants found</h3>
+        {% endif %}
+      </div>
     {% endif %}
   </div>
+  <!-- End Restaurants -->
 </body>
 </html>

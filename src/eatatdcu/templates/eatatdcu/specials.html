@@ -1,8 +1,38 @@
-<h1>SPECIALS</h1>
-{% if error %}
-    <h2>{{ error }}</h2>
-{% else %}
-    <h2>Restaurant name: {{ name }}</h2>
-    <h2>Daily special: {{ daily }}</h2>
-    <h2>Date: {{ date }}</h2>
-{% endif %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Eat@DCU</title>
+
+  <!-- CSS ans static files load -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'eatatdcu/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'eatatdcu/style.css' %}"/>
+  <link rel="icon" href="{% static 'eatatdcu/imgs/titlelogo.ico' %}"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="container-fluid header">
+    <div class="container chead">
+      <a href="{% url 'eatatdcu:index' %}"><h1 class="titleLogo">Eat@DCU</h1></a>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- Specials -->
+  <div class="container-fluid superSpe">
+    {% if error %}
+        <h2>{{ error }}</h2>
+    {% else %}
+      <div class="row">
+        <div class="col-3 spe">
+          <h2>Specials</h2>
+          <hr class="separator">
+          <p>Restaurant name: {{ name }}</p>
+          <p>Daily special: {{ daily }}</p>
+          <p>Date: {{ date }}</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

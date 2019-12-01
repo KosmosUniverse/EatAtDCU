@@ -1,13 +1,85 @@
 <html>
 <head>
+  <meta charset="utf-8">
+  <title>Eat@DCU</title>
+
+  <!-- CSS ans static files load -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'eatatdcu/style.css' %}" type="text/css"/>
+  <link rel="stylesheet" href="{% static 'eatatdcu/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'eatatdcu/style.css' %}"/>
+  <link rel="icon" href="{% static 'eatatdcu/imgs/titlelogo.ico' %}"/>
 </head>
+<!-- Body Content -->
 <body>
-  <h1>Eat at DCU!</h1>
-  <form action="{% url 'eatatdcu:restaurants' %}" method="get">
-    Campus: <input type="text" name="campus"><br>
-    <input type="submit" value="Go">
-  </form>
+  <!-- Header -->
+  <header class="container-fluid header">
+    <div class="container row chead">
+      <h1 class="col-7 titleLogo">Eat@DCU</h1>
+      <div class="col-4 superMenu">
+        <nav class="menu">
+          <a href="#Search">Search</a>
+          <a href="#Location">Locations</a>
+          <a href="#Contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- Banner -->
+  <section class="container-fluid superBanner">
+    <div class="container bann">
+      <h1>Welcome in Eat@DCU App</h1>
+    </div>
+  </section>
+  <!-- End Banner -->
+
+  <!-- Search -->
+  <section class="container-fluid superSearch">
+    <div class="container search" id="Search">
+      <h2>Search</h2>
+      <hr class="separator">
+      <div class="row">
+        <form class="col-5" action="{% url 'eatatdcu:restaurants' %}" method="get">
+          <input type="text" name="campus" placeholder="Campus...">
+          <input type="checkbox" name="staff">Staff Only</input>
+          <input type="checkbox" name="weekends">Open on Weekends</input>
+          <input type="checkbox" name="specials">Specials</input>
+          <input type="submit" value="Go">
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- End Search -->
+
+  <!-- Locations -->
+  <section class="container-fluid">
+    <div class="container locations">
+      <h2 id="Location">Locations</h2>
+      <hr class="separator">
+        {% if campusNB %}
+          <div class="row">
+            {% for camps in campusList %}
+              <article class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <h3>{{ camps.name }}</h3>
+                <div class="container pic">
+                  <a href="{% url 'eatatdcu:restaurants' %}?campus={{ camps.name }}"><img src="{% static 'eatatdcu/imgs/' %}{{ camps.pic }}"></a>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <p id="tests">Eat at DCU!</p>
+    </div>
+  </section>
+  <!-- End Locations -->
+
+  <!-- Footer -->
+  <footer class="container-fluid footer">
+    <div class="container cfoot">
+      <h1 class="titleEnd" id="Contact">Contact</h2>
+    </div>
+  </footer>
+  <!-- End Footer -->
 </body>
 </html>

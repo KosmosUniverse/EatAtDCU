@@ -1,10 +1,278 @@
-body {
-  background-color:rgb(230, 230, 230);
+@charset "UTF-8";
+
+/*
+background-color
+#DBEAF1
+#AED3E5
+#2787B7
+#035D8F
+#024669
+#EEEEEE
+*/
+
+/*
+Text color
+#ffffff
+#000000
+#FFA72F
+*/
+
+body, html {
+  padding: 0;
+  margin: 0;
 }
 
-div#container {
-  width:75%;
-  margin-left:auto;
-  margin-right:auto;
-  background: rgb(255, 255, 255);
+body {
+  font-family: Thesis;
+  background-color: #EEEEEE;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.container-fluid, .container {
+  padding: 0;
+  margin: 0;
+}
+
+.separator {
+  height: 3px;
+  width: 5%;
+  border: none;
+  box-shadow: none;
+  background-color: #035D8F;
+}
+
+#tests {
+  display: none;
+}
+
+/* Header */
+.header {
+  background-color: #024669;
+  height: 90px;
+  line-height: 90px;
+}
+
+.chead {
+  width: 100%;
+  max-width: 100%;
+}
+
+.titleLogo {
+  margin: 0;
+  padding: 0;
+  color: #FFA72F;
+  font-weight: bold;
+  text-align: center;
+  line-height: inherit;
+}
+
+.superMenu {
+  margin-left: 5%;
+}
+
+.menu {
+  padding: 0;
+  height: inherit;
+}
+
+.menu a {
+  color: #ffffff;
+  margin-left: 20px;
+  font-size: 2em ;
+
+}
+/* Banner */
+
+.superBanner {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background-image: url(imgs/Banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bann {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20%;
+}
+
+.bann h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3em;
+  text-shadow: 1px 1px 20px #000000;
+}
+
+/* Search */
+
+.superSearch {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background-image: url(imgs/allCampus.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.search {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+}
+
+.search h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3em;
+  text-shadow: 1px 1px 20px #000000;
+}
+
+.search form {
+  width: 100%;
+  max-width: 100%;
+  font-size: 2em;
+  margin: auto;
+  background-color: #EEEEEE;
+  border: 5px solid #000000;
+  padding: 1%;
+}
+
+.search input[type=text] {
+  width: 100%;
+}
+
+.search input[type=checkbox] {
+  width:19px;
+  height:19px;
+  margin:-2px 10px 0 0;
+}
+
+/* Locations */
+
+.locations {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.locations h2 {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 2%;
+}
+
+.locations h3 {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.pic {
+  width: 100%;
+  max-width: 100%;
+}
+
+.pic img {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #024669;
+  height: 90px;
+  line-height: 90px;
+  margin-top: 5%;
+}
+
+.cfoot {
+  width: 100%;
+  max-width: 100%;
+}
+
+.titleEnd {
+  margin: 0;
+  padding: 0;
+  color: #FFA72F;
+  font-weight: bold;
+  text-align: center;
+  line-height: inherit;
+}
+
+/* Restaurants */
+
+.superRestau {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background-image: url(imgs/RestauBack.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.restau {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #DDDDDD;
+  border: 5px solid #000000;
+}
+
+.restau h2 {
+  text-align: center;
+}
+
+.art {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.restau article {
+  background-color: #DDDDDD;
+  border: 2px solid #000000;
+}
+
+.restau h3 {
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.restau p {
+  margin: 0;
+}
+
+/* Specials */
+.superSpe {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background-image: url(imgs/SpeBack.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.spe {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #DDDDDD;
+  border: 5px solid #000000;
+  padding: 1%, 0, 0, 0;;
+  margin-top: 10%;
+}
+
+.spe h2 {
+  text-align: center;
+}
+
+.Spe p {
+  margin: 0;
+  font-size: 1.5em;
 }
