@@ -15,8 +15,19 @@ You will need python 3.6 and Django for this project.
 
 ## Usage
 
+You can launch the server with this command:
+
 ```bash
 python3 manage.py runserver
+```
+
+After that, open a web browser and enter in the url bar:
+```
+localhost:8000/eatatdcu
+```
+Or,
+```
+http://127.0.0.1:8000/eatatdcu
 ```
 
 ## Contributing
