@@ -2,6 +2,8 @@
 
 Eat@DCU is a web application for DCU restaurants.
 
+You can check it [Here](http://ducrett2.pythonanywhere.com/eatatdcu/)
+
 ## Download
 
 ```bash
@@ -10,7 +12,7 @@ git clone git@gitlab.computing.dcu.ie:ducrett2/2020-ca377-ducrett2-eatatdcu.git
 
 ## Requirements
 
-You will need python 3.6 and Django for this project.
+You will need [Python 3.6](https://www.python.org/downloads/) and [Django 2.2.4](https://www.djangoproject.com/download/) for this project.
 
 
 ## Usage
@@ -30,9 +32,14 @@ Or,
 http://127.0.0.1:8000/eatatdcu
 ```
 
+You can also launch tests, which are in the test.py file, with this command:
+```bash
+python3 manage.py test eatatdcu
+```
+
 ## Deploy
 
-To deploy you need a [pythonanywhere]https://www.pythonanywhere.com account.
+To deploy you need a [pythonanywhere](https://www.pythonanywhere.com) account.
 
 1. Go in "Console" tab and create a new console
 2. Make a new virtualenv
