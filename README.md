@@ -7,7 +7,7 @@ You can check it [Here](http://ducrett2.pythonanywhere.com/eatatdcu/)
 ## Download
 
 ```bash
-git clone git@gitlab.computing.dcu.ie:ducrett2/2020-ca377-ducrett2-eatatdcu.git
+git clone git@github.com:KosmosUniverse/EatAtDCU.git
 ```
 
 ## Requirements
